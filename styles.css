@@ -107,3 +107,14 @@ section td {
     width: 100%;
     object-fit: contain;
 }
+
+@media (max-width: 1400px) {
+    .sidebar {
+        position: initial;
+        width: 100%;
+    }
+
+    .main {
+        margin-left: 1rem;
+    }
+}
