@@ -1,0 +1,109 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #EFEFEF;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #111169;
+    transition: 250ms ease-in-out;
+}
+
+a:hover {
+    color: #BBB;
+}
+
+.top-link {
+    display: block;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    text-align: right;
+    font-size: .75rem;
+    border-bottom: 1px solid #BBB;
+}
+
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: .5rem;
+    font-size: 1.75rem;
+    background-color: #222;
+    color: #EEE;
+    z-index: 100;
+}
+
+.page-wrapper {
+    position: relative;
+    margin: 4rem .25rem;
+}
+
+.sidebar {
+    position: fixed;
+    width: 20%;
+    overflow: auto;
+}
+
+.sidebar h4 {
+    margin: 0;
+    padding: 0 .5rem;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0 .5rem;
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: .75rem 0;
+}
+
+.main {
+    width: 100%;
+    max-width: 850px;
+    margin-left: 20%;
+    padding: 0 1rem;
+}
+
+section {
+    padding-top: 2rem;
+}
+
+section table {
+    width: 100%;
+    font-size: .85rem;
+}
+
+section th, section td {
+    border: 1px solid #CCC;
+}
+
+section th {
+    padding: .25rem;
+    background-color: #555;
+    color: #FFF;
+    text-align: left;
+}
+
+section td {
+    padding: .15rem;
+}
+
+.image {
+    width: 100%;
+    margin: .75rem .25rem;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.15);
+}
+
+.image img {
+    width: 100%;
+    object-fit: contain;
+}

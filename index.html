@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpful IT Resources</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1 class="page-header">Helpful IT Resources</h1>
+
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <h4>Jump to:</h4>
+            <ul>
+                <li><a href="#statusLinks">Server Status Links</a></li>
+                <li><a href="#deprivisionChromebooks">Deprovision Chroembooks</a></li>
+                <li><a href="#makeUserAdmin">Make Windows User Admin</a></li>
+                <li><a href="#setupSecurePrint">Set up Secure Print for a User</a></li>
+                <li><a href="#lampApps">Add LAMP Apps to SPED iPads</a></li>
+                <li><a href="#resetCiscoPhone">Reset Cisco Phones to Factory Defaults</a></li>
+                <li><a href="#updateChromeOs">Updating Chromebooks to the Latest ChromeOS</a></li>
+            </ul>
+        </aside>
+
+        <div id="top" class="main">
+
+            <section id="statusLinks">
+                <h2>Server Status Links for Services Used by Staff</h2>
+                <p>These are links that show the server status of the most commonly used services by saff/teachers. Statuses are usually fairly accurate at showing known/reported issues, and are updaed pretty frequently.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>URL (Link)</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Clever</td>
+                            <td><a href="https://status.clever.com/" target="_blank">https://status.clever.com/</a></td>
+                            <td>SSO, Roster, Illuminate, some PowerSchool systems</td>
+                        </tr>
+                        <tr>
+                            <td>PowerScool</td>
+                            <td><a href="https://status.powerschool.com/" target="_blank">https://status.powerschool.com/</a></td>
+                            <td>Enrollment, SIS</td>
+                        </tr>
+                        <tr>
+                            <td>JAMF</td>
+                            <td><a href="https://status.jamf.com/" target="_blank">https://status.jamf.com/</a></td>
+                            <td>JAMF dashboard for iPads and APIs used by iPads</td>
+                        </tr>
+                        <tr>
+                            <td>Google Workspace Suite</td>
+                            <td><a href="https://www.google.com/appsstatus/dashboard/" target="_blank">https://www.google.com/appsstatus/dashboard/</a></td>
+                            <td>All Google suite products</td>
+                        </tr>
+                        <tr>
+                            <td>AWS</td>
+                            <td><a href="https://health.aws.amazon.com/health/status" target="_blank">https://health.aws.amazon.com/health/status</a></td>
+                            <td>Amazon Web Service runs a lot of our databases and APIs</td>
+                        </tr>
+                        <tr>
+                            <td>GoGuardian</td>
+                            <td><a href="https://status.goguardian.com/" target="_blank">https://status.goguardian.com/</a></td>
+                            <td>GoGuardian Admin dashboard, content filtering</td>
+                        </tr>
+                        <tr>
+                            <td>Frontline Education</td>
+                            <td><a href="https://www.saashub.com/frontline-education-status/" target="_blank">https://www.saashub.com/frontline-education-status/</a></td>
+                            <td>Applitrack; time and attendance</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </section>
+
+            <section id="deprivisionChromebooks">
+                <h2>Deprovisioning Chroembooks</h2>
+                <p>Follow these steps to deprovision Chromebooks using the Google Admin console.</p>
+                
+                <ol>
+                    <li>
+                        Log in to <a href="http://admin.google.com/" target="_blank">Google Admin Console</a> using SUSD credentials. Once logged in, click on <em>Devices</em>:
+                        <div class="image">
+                            <img src="./assets/deprovision/step1.png" alt="Step 1">
+                        </div>
+                    </li>
+                    <li>
+                        Click on the <em>Chrome Devices</em> option:
+                        <div class="image">
+                            <img src="./assets/deprovision/step2.png" alt="Step 2">
+                        </div>
+                    </li>
+                    <li>
+                        Change the <em>Status</em> from <em>Provisioned</em> to <em>All</em>, and then enter the device's serial number to find it in the console:
+                        <div class="image">
+                            <img src="./assets/deprovision/step3.png" alt="Step 3">
+                        </div>
+                    </li>
+                    <li>
+                        Click on <em>Deprovision</em> from the options menu on the left panel of the console:
+                        <div class="image">
+                            <img src="./assets/deprovision/step4.png" alt="Step 4">
+                        </div>
+                    </li>
+                    <li>
+                        Click on <em>Yes, Factory Reset</em>, then click on the radio button next to <em>Same Model Replacement</em>, and then check the checkbox to acknowledge the upgrade policy. Click the <em>Deprovision</em> button:
+                        <div class="image">
+                            <img src="./assets/deprovision/step5.png" alt="Step 5"> 
+                        </div>
+                    </li>
+                    <li>
+                        The Chromebook will restart, powerwash, and then will be ready for enterprise enrollment again.
+                    </li>
+                </ol>
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </section>
+
+            <secion id="makeUserAdmin">
+                <h2>Make a Windows User an Admin on their Laptop</h2>
+                <p>Using CMD to set current user as Admin on their district-issue laptop does not work on the G7 laptops. Here is a working method:</p>
+
+                <ol>
+                    <li>Press the <strong>Windows Logo</strong> key & <strong>R</strong> key at the same time to open the <em>Run</em> dialog.</li>
+                    <li>Enter <em>netplwiz</em> in the text field and press Enter or click OK.</li>
+                    <li>A window will open with settings for user accounts. Click on <em>Add...</em></li>
+                    <li>A dialog will appear to add a domain account. Click on <em>Browse...</em></li>
+                    <li>In the <em>Object Names</em> dialog, type the user's SUSD username (first part of their email, without the susd12.org).</li>
+                    <li>Click on <em>Check Names</em> and make sure that the user's full name and SUSD email address shows up.</li>
+                    <li>Click on OK; once the dialog closes click on Next.</li>
+                    <li>Click the radio button that says Administrator, then click Next</li>
+                    <li>Click Finish and then click Apply, and OK.</li>
+                    <li>Restart the laptop, and have the user log in to their account. The user will now have full admin control over their laptop.</li>
+                </ol>
+                <p><em><strong>** NOTE:</strong>  If a UAC dialog pops up asking the user to provide admin credentials, they can enter their SUSD username and password, and they will be granted admin priviledges.</em></p>
+
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </secion>
+
+            <section id="setupSecurePrint">
+                <h2>Set a Windows User Up with Secure Print</h2>
+                <ol>
+                    <li>
+                        Once the printer is added to the user's computer, open up Control Panel and navigate to <em>Devices and Printers</em>.
+                    </li>
+                    <li>
+                        Locate the printer that the user wants to enable Secure Print on and right-click and click <em>Printing Preferences</em>.
+                    </li>
+                    <li>
+                        A dialog box will appear. In the <em>Basic Settings</em> tab, click on the dropdown for <em>Output Method</em>:
+                        <div class="image">
+                            <img src="./assets/secure-print/step3.png" alt="Step 3">
+                        </div>
+                    </li>
+                    <li>
+                        Click on the <em>Secured Print</em> option:
+                        <div class="image">
+                            <img src="./assets/secure-print/step4.png" alt="Step 4">
+                        </div>
+                    </li>
+                    <li>
+                        An alert will pop up asking if you want to set the user's PIN now. Click on No to require the user to create a new PIN each time they wish to print a document. This will help combat users forgetting their Secure Print PIN:
+                        <div class="image">
+                            <img src="./assets/secure-print/step5.png" alt="Step 5">
+                        </div>
+                    </li>
+                    <li>
+                        The user will now be set up for Secure Print on that printer, and will be prompted to provide a PIN each time they print a document to that printer.
+                    </li>
+                </ol>
+
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </section> 
+
+            <section id="lampApps">
+                <h2>Add LAMP Apps to SPED iPads in JAMF</h2>
+
+                <ol>
+                    <li>Log in to JAMF Dashboard.</li>
+                    <li>Go to <em>Devices</em> and look for the iPad by serial number.</li>
+                    <li>Move the iPad to the main <em>Sunnyside</em> OU (DO NOT move device owner!)</li>
+                    <li>Add device group <em>SPED no apps</em></li>
+                    <li>Add device groupd <em>SPED Device Group</em></li>
+                    <li>LAMP will install automatically.</li>
+                    <li>If TouchChat is needed, this will need to be manually installed from Managed Apps.</li>
+                    <li>At the top of the device profil ein JAMF, click on <em>Permanently delete deffered items</em>.</li>
+                </ol>
+
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </section>
+
+            <section id="resetCiscoPhone">
+                <h2>Factory Reset Cisco CP-3950 (Classroom) Phones</h2>
+                <p>Follow these steps to reset the Cisco CP-3950 Classroom phones to factory defaults:</p>
+
+                <ol>
+                    <li>Unplug the Network cable from the back of the phone.</li>
+                    <li>Hold down the <strong>#</strong> key on the phone.</li>
+                    <li>Wait 3 seconds, then plug the NEtwork cable back into the phone, while continuing to hold down the <strong>#</strong> key.</li>
+                    <li>Wait 10 seconds</li>
+                    <li>Press the kyes '1', '2', '3', '4', '5', '6', '7', '8', '9'. '*', '#' in sequence.</li>
+                    <li>The phone will reset to factory defaults.</li>
+                </ol>
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </section>
+
+            <section id="updateChromeOs">
+                <h2>Updating Chromebooks to the Latest ChromeOS</h2>
+                <ol>
+                    <li>
+                        Log in to the Chromebook. Once logged in, select the time at the lower right hand corner of the task ribbon:
+                        <div class="image">
+                            <img src="./assets/chrome-update/step1.png" alt="Step 1">
+                        </div>
+                    </li>
+                    <li>
+                        Once the control interface comes up, select the ‘Settings’ icon (it looks like a gear):
+                        <div class="image">
+                            <img src="./assets/chrome-update/step2.png" alt="Step 2">
+                        </div>
+                    </li>
+                    <li>
+                        Chrome Settings should now open up. Click on <strong>About Chrome OS</strong> located on the left panel, towards the bottom of the screen:
+                        <div class="image">
+                            <img src="./assets/chrome-update/step3.png" alt="Step 3">
+                        </div>
+                    </li>
+                    <li>
+                        Once the ‘About Chrome OS’ screen appears, click on <strong>Check for Updates</strong>:
+                        <div class="image">
+                            <img src="./assets/chrome-update/step4.png" alt="Step 4">
+                        </div>
+                    </li>
+                    <li>
+                        The Chrome device will update:
+                        <div class="image">
+                            <img src="./assets/chrome-update/step5.png" alt="Step 5">
+                        </div>
+                    </li>
+                    <li>
+                        Click on <strong>Restart</strong> once the update completes:
+                        <div class="image">
+                            <img src="./assets/chrome-update/step6.png" alt="Step 6">
+                        </div>
+                    </li>
+                    <li>
+                        Once the Chromebook restarts, your device will be running the most up-to-date version of ChromeOS that is supported by the device.
+                    </li>
+                </ol>
+
+                <a class="top-link" href="#top">^ Back to Top</a>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>
